@@ -1,0 +1,191 @@
+/* Fonts: */
+
+h1, h2, h3, h4, .h1, .h2, .h3 {
+    font-family: "Ubuntu Sans Mono", serif;
+    font-weight: 300; 
+    font-optical-sizing: auto;
+}
+* {
+    font-family: "Quicksand", serif;
+    font-optical-sizing: auto;
+    font-weight: 700; 
+    font-style: normal;
+    color: black;
+}
+
+:root{
+    --light-green: rgb(138, 194, 74);
+    --dark-green: rgb(64, 89, 36);
+    --neon-green:  rgb(136, 255, 0);
+    --soft-orange: rgb(225, 175, 130); 
+}
+
+html, body {
+    width: 100vw;
+    overflow-x: hidden; 
+}
+
+
+body{
+    background-color: var(--dark-green);
+}
+
+
+/* Navbar */
+.navbar{
+    height: 140px;
+    transition: 0.4s;
+}
+
+.nav-color {
+    background-color: var(--light-green);
+}
+
+#navbar, .navbar-collapse, .nav-link {
+    transition: 0.5s;
+}
+
+
+.nav-link {
+    color: var(--dark-green);
+    font-weight: 700;
+    font-size: x-large;
+}
+
+.nav-link:hover {
+    color: white !important;
+    text-shadow: 3px 3px 6px var(--neon-green), -3px -3px 6px var(--neon-green);
+}
+
+
+.logo{
+    width: 70px;
+}
+
+.logo2{
+    width: 35px;
+    transition: 0.4s;
+    margin-right: 5%;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Header */
+.header{
+    background-image:linear-gradient(rgba(138, 194, 74), transparent,rgba(47, 2, 9)),url(Media/shrek.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text-presto{
+    color: var(--dark-green);
+}
+
+
+.btn-custom{
+    background-color: var(--dark-green);
+    border: 1px solid var(--neon-green);
+    color: var(--neon-green);
+    margin: 0px 15px;
+    padding: 20px 20px;
+    border-radius: 40%;
+    transition: 0.3s;
+}
+
+.btn-custom:hover{
+    background-color: var(--light-green);
+    border: 2px solid var(--dark-green);
+    color: var(--dark-green);
+    transform: scale(1.1);
+    
+}
+
+#icona2, #icona3{
+    width: 80px;
+}
+
+#icona1{
+    width: 50px;
+}
+
+/* Positoned */
+.positioned{
+    position: relative;
+    top: -150px;
+}
+
+/* Stili base per .col-custom */
+.col-custom {
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+    background-color: var(--light-green);
+    border: 1px solid var(--dark-green);
+    border-radius: 20%;;
+
+}
+
+.col-custom:hover {
+    background-color: var(--dark-green); 
+    transform: scale(1.1);
+    border: 2px solid var(--light-green);
+    
+
+}
+
+.col-custom:hover * {
+    color: var(--light-green); 
+}
+
+@media screen and (max-width: 600px){
+    .positioned{
+        position: static;
+    }
+}
+
+.container-fluid {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.colored{
+    color: var(--neon-green);
+    text-decoration: underline;
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.p-body{
+    color: var(--white);
+}
+
+/* Numeri incrementali */
+.number{
+    font-size: 50px;
+    font-weight: 900;
+    color: var(--neon-green);
+}
+
+.swiper {
+    width: 600px;
+    height: 300px;
+  }
+
+.card-review{
+    height: 250px;
+    width: 500px;
+}
+
+.swiper-slide{
+    display:flex ;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-star{
+    color: var(--soft-orange);
+}
+
