@@ -1,6 +1,6 @@
 /* Fonts: */
 
-h1, h2, h3, h4, .h1, .h2, .h3 {
+h1, h2, h3, h4, .h1, .h2, .h3 .h4{
     font-family: "Ubuntu Sans Mono", serif;
     font-weight: 300; 
     font-optical-sizing: auto;
@@ -22,7 +22,6 @@ h1, h2, h3, h4, .h1, .h2, .h3 {
 
 html, body {
     width: 100vw;
-    overflow-x: hidden; 
 }
 
 
@@ -54,7 +53,7 @@ body{
 
 .nav-link:hover {
     color: white !important;
-    text-shadow: 3px 3px 6px var(--neon-green), -3px -3px 6px var(--neon-green);
+    text-shadow: 3px 3px 6px var(--neon-green), -3px -3px 6px var(--neon-green);   
 }
 
 
@@ -64,7 +63,6 @@ body{
 
 .logo2{
     width: 35px;
-    transition: 0.4s;
     margin-right: 5%;
     transition: transform 0.3s ease-in-out;
 }
@@ -88,8 +86,8 @@ body{
     color: var(--neon-green);
     margin: 0px 15px;
     padding: 20px 20px;
-    border-radius: 40%;
-    transition: 0.3s;
+    border-radius: 30px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .btn-custom:hover{
@@ -122,7 +120,7 @@ body{
     transition: 0.4s;
     background-color: var(--light-green);
     border: 1px solid var(--dark-green);
-    border-radius: 20%;;
+    border-radius: 30px;;
 
 }
 
@@ -179,6 +177,32 @@ body{
     width: 500px;
 }
 
+.card-custom{
+    width: 30%;
+    border: 2px solid var(--light-green);
+    border-radius: 30px;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-custom:hover{
+    border: 1px solid var(--neon-green);
+    transform: scale(1.2);
+}
+
+.img-card{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+p[title] {
+    position: relative;
+    cursor: pointer;
+}
+
 .swiper-slide{
     display:flex ;
     align-items: center;
@@ -188,4 +212,75 @@ body{
 .fa-star{
     color: var(--soft-orange);
 }
+
+.neon-green{
+    color: var(--neon-green);
+}
+
+.light-green{
+    color: var(--light-green);
+}
+
+/* Accordion */
+.accordion-item,
+.accordion-button,
+.accordion-header,
+.accordion-body
+{
+    color: var(--dark-green);
+    background-color: var(--light-green);
+}
+
+/* Hover */
+.accordion-item:hover,
+.accordion-button:hover,
+.accordion-header:hover{
+    color: var(--neon-green);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.accordion-body:hover{
+    background-color: transparent;
+    color: var(--neon-green);
+}
+
+/* Bottone accordion */
+.accordion-button:not(.collapsed) {
+    color: var(--dark-green);
+    background-color: var(--light-green);
+}
+
+.accordion-button:focus{
+    box-shadow: none;
+}
+
+.form-check-label{
+    color: rgb(255, 254, 220) ;
+}
+
+.form-check-label:hover{
+    color: var(--neon-green);
+    cursor: pointer;
+}
+
+.form-check-input{
+    cursor: pointer;
+}
+
+/* Custumized thumb range */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--neon-green);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
+
+  
 

@@ -1,0 +1,12 @@
+json:
+API: chiavi che ci permettono di raggiungere un .json online
+
+fetch (): chiamata asincrona che permette di collegarci ad un JSON e da esso estrarne il dato sotto forma di Promise.
+then (): metodo che permette di convertite le Promise nel dato Struturale e di poterlo utilizzare come tale in JS.
+.json(): metodo delle Promis che mi permette di convertirla in oggetto 
+
+STEP:
+1. fetch() = collego al JSON e ne ottengo una Promise
+2. .then()= converto la Promise in un dato Struturale JS
+3. .then()= utilizzare il dato ottento 
+4. .json()= conversione
