@@ -5,6 +5,8 @@ fetch('./annunci.json').then((response) => response.json()).then((data) => {
     let cardWrapper = document.querySelector('#cardWrapper');
     let priceInput = document.querySelector('#priceInput');
     let priceValue = document.querySelector('#priceValue');
+    let wordInput = document.querySelector('#wordInput');
+
 
     function radioCreate() {
         let categories = data.map((annuncio) => annuncio.category);
@@ -79,4 +81,18 @@ fetch('./annunci.json').then((response) => response.json()).then((data) => {
         filterPrice();
     });
 
+
+    function filterWord(parola) {
+    let filtered = data.filter((annuncio) => annuncio.name.toLowerCase().includes(parola.toLowerCase()));
+    showCards(filtered);
+}
+    wordInput.addEventListener('input', ()=>{
+        filterWord(wordInput.value);
+    })
+
+
+
+
 });
+
+
