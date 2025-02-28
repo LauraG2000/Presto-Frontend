@@ -49,12 +49,37 @@ body{
     color: var(--dark-green);
     font-weight: 700;
     font-size: x-large;
+    position: relative; /* Necessario per posizionare l'immagine sopra */
 }
 
 .nav-link:hover {
     color: white !important;
-    text-shadow: 3px 3px 6px var(--neon-green), -3px -3px 6px var(--neon-green);   
+    text-shadow: 3px 3px 6px var(--neon-green), -3px -3px 6px var(--neon-green);
 }
+
+/* Aggiungi orecchie sopra ai link */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    top: -10px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55px; 
+    height: 55px; 
+    background-image: url('./Media/shrek-ears.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* All'hover fa comparire l'immagine */
+.nav-link:hover::after {
+    opacity: 1;
+}
+
+
+
 
 
 .logo{
@@ -191,6 +216,7 @@ body{
 .card-custom:hover{
     border: 1px solid var(--neon-green);
     transform: scale(1.2);
+    background-color: var(--dark-green);
 }
 
 .img-card{
