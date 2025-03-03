@@ -1,17 +1,25 @@
 /* Fonts: */
-
-h1, h2, h3, h4, .h1, .h2, .h3 .h4{
-    font-family: "Ubuntu Sans Mono", serif;
-    font-weight: 300; 
-    font-optical-sizing: auto;
-}
 * {
+    font-family: "Ubuntu Sans Mono", serif;
+    font-weight: 550; 
+    font-optical-sizing: auto;
+    color: black;
+}
+h1, h2, h3, h4, .h1, .h2, .h3 .h4{
     font-family: "Quicksand", serif;
     font-optical-sizing: auto;
     font-weight: 700; 
     font-style: normal;
-    color: black;
 }
+
+.text-cards{
+    font-family: "Quicksand", serif;
+    font-optical-sizing: auto;
+    font-weight: 380; 
+    font-style: normal;
+}
+
+
 
 :root{
     --light-green: rgb(138, 194, 74);
@@ -78,10 +86,6 @@ body{
     opacity: 1;
 }
 
-
-
-
-
 .logo{
     width: 70px;
 }
@@ -146,7 +150,7 @@ body{
     background-color: var(--light-green);
     border: 1px solid var(--dark-green);
     border-radius: 30px;;
-
+    
 }
 
 .col-custom:hover {
@@ -154,7 +158,7 @@ body{
     transform: scale(1.1);
     border: 2px solid var(--light-green);
     
-
+    
 }
 
 .col-custom:hover * {
@@ -195,7 +199,7 @@ body{
 .swiper {
     width: 600px;
     height: 300px;
-  }
+}
 
 .card-review{
     height: 250px;
@@ -294,6 +298,10 @@ p[title] {
     cursor: pointer;
 }
 
+.vh-75 {
+    height: 75vh;
+}
+
 /* Custumized thumb range */
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -305,8 +313,98 @@ input[type="range"]::-webkit-slider-thumb {
     cursor: pointer;
 }
 
+.circle{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border: 12px groove  var(--light-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
 
+.opener{
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    border: solid 2px var(--light-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    background-color: var(--dark-green);
+    cursor: pointer;
+    transition: 0.5s;
+    
+}
 
+.plus{
+    color: var(--neon-green)
+}
 
-  
+.moved{
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    border: solid 2px var(--light-green);
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    position: absolute;
+    z-index: 2;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.flip-card {
+    height: 400px;
+    width: 300px;
+    transition: 0.5s;
+}
+
+.flip-card:hover > .inner {
+    transform: rotateY(180deg);
+}
+
+.inner {
+    height: 100%;
+    width: 100%;
+    border: 4px solid var(--light-green);
+    border-radius: 20px;
+    position: relative;
+    transition: 0.8s;
+    transform-style: preserve-3d;
+}
+
+.inner-face {
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.inner-back {
+    height: 100%;
+    width: 100%; 
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    background-color: transparent;
+    text-align: center;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 7px;
+}
+
+.about-us-custom{
+    font-family: "Ubuntu Sans Mono", serif;
+}
 

@@ -5,9 +5,17 @@ fetch('./annunci.json')
     
     let radioWrapper = document.querySelector('#radioWrapper');
     let cardWrapper = document.querySelector('#cardWrapper');
-    let priceInput = document.querySelector('#priceInput');
+    let priceInput = document.querySelector('#priceInput');  
     let priceValue = document.querySelector('#priceValue');
     let wordInput = document.querySelector('#wordInput');
+    
+    // Trova il prezzo massimo tra tutti gli annunci
+    let maxInitialPrice = Math.ceil(Math.max(...data.map(annuncio => +annuncio.price))); 
+    
+    // Imposta il massimo e il valore iniziale del filtro del prezzo
+    priceInput.max = maxInitialPrice;
+    priceInput.value = maxInitialPrice;
+    priceValue.innerHTML = maxInitialPrice;
     
     // Variabili per tenere traccia dei filtri attivi
     let activeCategory = 'all';
