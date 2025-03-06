@@ -10,7 +10,7 @@ logo2.addEventListener('click', () => {
 });
 
 
-fetch('./annunci.json')
+fetch('./Annunci.json') 
 .then((response) => response.json())
 .then((data) => {
     data.sort((a, b) => a.price - b.price);
