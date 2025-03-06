@@ -6,45 +6,48 @@ let navbarCollapse = document.querySelector('.navbar-collapse');
 
 window.addEventListener('scroll', () => {
     let scrolled = window.scrollY;
-
+    
     if (scrolled > 0) {
         navbar.style.backgroundColor = 'var(--dark-green)';
-        navbarCollapse.style.backgroundColor = 'var(--dark-green)';
         navbar.style.height = '70px';
+        
+        if (navbarCollapse) {
+            navbarCollapse.style.backgroundColor = 'var(--dark-green)';
+        }
 
         links.forEach((link) => {
             link.style.color = 'var(--light-green)';
         });
 
         // Cambia logo on scroll
-        logoNav.src = 'http://127.0.0.1:5500/Media/baloon-l.png';
-        logo2.src = 'http://127.0.0.1:5500/Media/logo2-l.png';
+        logoNav.src = 'Media/baloon-l.png';
+        logo2.src = 'Media/logo2-l.png';
     } else {
         navbar.style.backgroundColor = 'var(--light-green)';
-        navbarCollapse.style.backgroundColor = 'var(--light-green)';
         navbar.style.height = '140px';
+        
+        if (navbarCollapse) {
+            navbarCollapse.style.backgroundColor = 'var(--light-green)';
+        }
 
         links.forEach((link) => {
             link.style.color = 'var(--dark-green)';
         });
 
         // Cambia logo on scroll (per contrasto)
-        logoNav.src = 'http://127.0.0.1:5500/Media/baloon-d.png';
-        logo2.src = 'http://127.0.0.1:5500/Media/logo2-d.png';
+        logoNav.src = 'Media/baloon-d.png';
+        logo2.src = 'Media/logo2-d.png';
     }
 });
 
-let check = true;
+// Rotazione del logo2 (toggle menu)
+let isRotated = false;
 
-logo2.addEventListener('click',() =>{
-    if (check == false) {
-        logo2.style.transform = `rotate(90deg)`
-        check = true;
-    }else{
-        logo2.style.transform = `rotate(0deg)`
-        check = false;
-    }
-})
+logo2.addEventListener('click', () => {
+    isRotated = !isRotated;
+    logo2.style.transform = isRotated ? 'rotate(90deg)' : 'rotate(0deg)';
+    logo2.style.transition = 'transform 0.3s ease-in-out'; 
+});
 
 let firstNumber = document.querySelector('#firstNumber');
 let secondNumber = document.querySelector('#secondNumber');
@@ -109,10 +112,10 @@ reviews.forEach((review) => {
 
     div.innerHTML = `
       <div class="card-review position-relative">
-            <div class="d-flex justify-content-center py-5 star">
+            <div class="d-flex justify-content-center align-items-center px-3 py-3 star">
                 ${filledStars}${emptyStars}
             </div>
-            <p class="lead text-center text-light">${review.description}</p>
+            <p class="lead text-center">${review.description}</p>
                 <div class="position-absolute bottom-2 end-2">
                     <h4 class="lead">${review.user}</h4>
                 </div>

@@ -1,3 +1,14 @@
+// Mantiene la rotazione del logo2
+let logo2 = document.querySelector('#logo2');
+
+let isRotated = false;
+
+logo2.addEventListener('click', () => {
+    isRotated = !isRotated;
+    logo2.style.transform = isRotated ? 'rotate(90deg)' : 'rotate(0deg)';
+    logo2.style.transition = 'transform 0.3s ease-in-out'; 
+});
+
 let opener = document.querySelector('.opener');
 let circle = document.querySelector('.circle');
 

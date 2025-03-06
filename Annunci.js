@@ -1,3 +1,15 @@
+// Mantiene la rotazione del logo2
+let logo2 = document.querySelector('#logo2');
+
+let isRotated = false;
+
+logo2.addEventListener('click', () => {
+    isRotated = !isRotated;
+    logo2.style.transform = isRotated ? 'rotate(90deg)' : 'rotate(0deg)';
+    logo2.style.transition = 'transform 0.3s ease-in-out'; 
+});
+
+
 fetch('./annunci.json')
 .then((response) => response.json())
 .then((data) => {
@@ -52,9 +64,9 @@ fetch('./annunci.json')
             div.classList.add('card-custom');
             div.innerHTML = 
             `<img src="https://picsum.photos/${300 + i}" alt="immagine casuale" class="img-fluid img-card">
-                 <p class="h2 light-green" title="${annuncio.name}">${stopWord(annuncio.name)}</p>
-                 <p class="h3 light-green">${annuncio.category}</p>
-                 <p class="h4 light-green">${annuncio.price} €</p>`;
+                 <p class="h2 light-green card-text" title="${annuncio.name}">${stopWord(annuncio.name)}</p>
+                 <p class="h3 light-green card-text">${annuncio.category}</p>
+                 <p class="h4 light-green card-text">${annuncio.price} €</p>`;
             cardWrapper.appendChild(div);
         });
     }
@@ -63,8 +75,8 @@ fetch('./annunci.json')
     
     // Funzione per filtrare gli annunci per categoria
     function filterCategory(categoria) {
-        activeCategory = categoria; // Aggiorna la categoria attiva
-        setPriceFilter(); // Ricalcola il massimo prezzo per la nuova categoria
+        activeCategory = categoria; 
+        setPriceFilter();
         globalFilter(); // Rapplica i filtri concatenati
     }
     
@@ -81,7 +93,7 @@ fetch('./annunci.json')
         
         // Ottieni i prezzi della categoria filtrata e calcola il massimo
         let prices = filteredData.map((annuncio) => +annuncio.price).sort((a, b) => a - b);
-        let maxPrice = prices.length > 0 ? Math.ceil(prices.pop()) : 0; // Prevenire errori se non ci sono annunci
+        let maxPrice = prices.length > 0 ? Math.ceil(prices.pop()) : 0;
         
         // Imposta il prezzo massimo e il valore del range
         priceInput.max = maxPrice;
